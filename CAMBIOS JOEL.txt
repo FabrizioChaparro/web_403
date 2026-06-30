@@ -1,0 +1,3 @@
+Modifique index.css, index.html y cursos.js agregue una funcion al final para que desde index puedan ir directo al link de la categoria que buscan en cursos. El resto de cambios son medio evidentes por que son todos visuales de inicio. 
+Falta definir footer y header, el logo del cfp en header es minusculo y casi no se ve. 
+El boton Ver Mas... para mi deberia ser boton de Ver Cursos..., porque si solo va a ser para un pequeño scroll para eso lo induzco a explorar la seccion de cursos

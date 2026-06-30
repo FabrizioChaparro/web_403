@@ -280,3 +280,19 @@ buscador.addEventListener("keyup", render);
 
 /* primera carga */
 render();
+
+
+// Esto lo agregue para que se pueda cargar 
+// la seccion especifica de cursos desde index
+// ej: quiero ver curso de electricidad en index 
+// le doy clic y va a cursos directamente a esa categoria
+// agregado por team de inicio
+window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const categoria = params.get('categoria');
+    
+    if (categoria) {
+        filtrar(categoria); 
+        // ejecuta funcion existente de filtrado
+    }
+});

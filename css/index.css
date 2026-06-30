@@ -1,9 +1,121 @@
+.textopregunta{
+  font-size: 2.5rem;
+
+  color: var(--primary-color);
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.textopregunta::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--primary-color); /* usa color principal */
+  border-radius: 2px;
+}
 /* HERO */
 .hero {
   height: 100vh;
   background:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../assets/images/patiohd.jpg");
+    url("../assets/images/patio1.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+  animation: fadeUp 1s;
+  mask-image: linear-gradient(to bottom, black 80%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 95%);
+
+}
+
+.hero h1 {
+  margin-top: 0;
+  /*esto evita una linea blanca entre imagenes*/
+  margin-bottom: 40px;
+  font-size: 3rem;
+  animation: fadeUp 1s;
+}
+
+.hero p {
+  margin-top: 0;
+  /*esto evita una linea blanca entre imagenes*/
+  margin: 20px;
+  font-size: 1.2rem;
+  animation: fadeUp 1.5s;
+}
+
+
+/*imagen con texto igual que hero, agregado por joel*/
+/*INICIO*/
+.hero2 {
+
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/images/patio3.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+  animation: fadeUp 1s;
+mask-image: linear-gradient(to top, black 80%, transparent 95%);
+-webkit-mask-image: linear-gradient(to top, black 80%, transparent 95%);
+}
+p{
+  margin-bottom: 75px;
+}
+.hero2 p {
+  margin: 20px 0;
+  font-size: 3rem;
+  animation: fadeUp 1.5s;
+}
+.hero2 h1 {
+  margin: 20px 0;
+  font-size: 3rem;
+  animation: fadeUp 1.5s;
+}
+.hero2 button {
+  margin-top: 40px;
+  padding: 12px 25px;
+  border: none;
+  background: var(--white);
+  color: var(--primary-color);
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform var(--transition);
+}
+
+.hero2 button:hover {
+  transform: scale(1.08);
+}
+.hero3{
+    text-align: center;
+}
+/* TRASLADE EL BUTTON A HERO2 */
+/*FIN
+/*imagen con texto igual que hero, agregado por joel*/
+/*INICIO*/
+/* .hero3 {
+
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/images/patio3.jpeg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -14,29 +126,13 @@
   color: var(--white);
 }
 
-.hero h1 {
-  font-size: 3rem;
-  animation: fadeUp 1s;
-}
-.hero p {
+.hero3 p {
   margin: 20px 0;
   font-size: 1.2rem;
   animation: fadeUp 1.5s;
-}
+} */
 
-.hero button {
-  padding: 12px 25px;
-  border: none;
-  background: var(--white);
-  color: var(--primary-color);
-  cursor: pointer;
-  border-radius: 5px;
-  transition: transform var(--transition);
-}
-
-.hero button:hover {
-  transform: scale(1.08);
-}
+/*FIN
 
 /* SECCIÓN ESPECÍFICA */
 .img_section {
@@ -47,4 +143,90 @@
 .presentacion p {
   padding-inline: 20%;
   text-align: justify;
+}
+.card{
+  text-decoration: none;
+    color: inherit;
+    /* con esto anulo el subrayado y texto azul de los links */
+}
+/* clase nueva para las tarjetas
+de la parte de "porque elegirnos?" */
+/* INICIO */
+.card2 {
+  position: relative;      /* ancla el destello dentro de la tarjeta */
+  overflow: hidden;        /* corta el destello cuando sale de los limites */
+  background: var(--white);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  height: 120px;
+  
+}
+
+.card2:hover {
+  transform: translateY(-8px);
+}
+
+/* DESTELLO (pseudo-elemento) */
+.card2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;              /* arranca escondido a la izquierda */
+  z-index: 2;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.4) 100% /* subi a 0.4 para que resalte sobre fondo blanco */
+  );
+}
+.card2:hover::before {
+  animation: shine 0.75s ease-in-out;
+}
+
+.footer {
+    margin-top: 0 !important;
+}
+.card.index-animated {
+  position: relative;
+  overflow: hidden;  text-decoration: none;
+    color: inherit;
+}
+
+.card.index-animated::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;              /* arranca escondido a la izquierda */
+  z-index: 2;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.4) 100% /* subi a 0.4 para que resalte sobre fondo blanco */
+  );
+}
+
+.card.index-animated:hover::before {
+  animation: shine 0.75s ease-in-out;
+}
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;            /* Termina escondido a la derecha */
+  }
+}
+/* FIN */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
 }
