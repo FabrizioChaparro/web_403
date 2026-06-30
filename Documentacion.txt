@@ -1,0 +1,9 @@
+1_ Se han separado el codigo de styles.css en varios archivos.
+
+2_ Se creo el archivo global.css en donde esta todo lo realizado con las diferentes paginas, (todo codigo que se repite).
+
+3_ Se han creado los archivos index.css, cursos.css, contacto.css donde se van a mannejar solo los estilos relacionados a esa pagina sin afectar header, footer, etc ya que eso maneja global.css.
+
+4_ Se han modificado las rutas de los HTML para que detecten los estilos que les pertenece a cada pagina.
+
+5_ archivos JS sin cambios.
