@@ -7,7 +7,8 @@
   --background-color: #f5f7fa;
   --white: #ffffff;
   --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --transition: 0.3s ease;
+  --transition: all 0.3s ease;
+  --border-radius: 50px; /* Variable crteada para saber si se aplica despues de compilar */
 }
 
 /* ==========================

@@ -1,88 +1,267 @@
-/* BUSCADOR Y FILTROS */
+/* --- SECCIÓN DEL BUSCADOR --- */
+/* Estilo principal para el área donde el usuario escribe lo que busca */
 .buscador {
+  padding: 40px 20px;
   text-align: center;
-  padding: 30px;
-}
-.buscador input {
-  padding: 10px;
-  width: 250px;
 }
 
+/* Diseño del cuadro de texto (bordes redondeados y tamaño) */
+#buscar {
+  width: 100%;
+  max-width: 600px;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 50px;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Cambio visual cuando el usuario hace clic dentro del buscador */
+#buscar:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.2);
+  transform: scale(1.02);
+}
+
+/* --- SECCIÓN DE FILTROS --- */
+/* Contenedor de los botones para filtrar por categorías */
 .filtros {
-  text-align: center;
-}
-.filtros button {
-  margin: 5px;
-  padding: 10px;
-  border: none;
-  background: var(--primary-color);
-  color: var(--white);
-  cursor: pointer;
-}
-
-/* Ajuste para que todas las cajas sean uniformes */
-.cards .card {
-  background: var(--white);
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  transition: transform var(--transition);
-
-  /* --- CAMBIOS PARA UNIFICAR EL TAMAÑO --- */
-  height: 450px; /* Define una altura fija para todas las tarjetas */
-  width: 300px; /* Asegura un ancho fijo (puedes ajustarlo a tu gusto) */
-  display: flex; /* Usamos flexbox interno para organizar el contenido */
-  flex-direction: column;
-  justify-content: space-between; /* Distribuye el texto equitativamente */
-}
-
-/* Ajuste para las imágenes dentro de esas tarjetas */
-.cards .card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-  cursor: pointer; /* Esto hará que toda la tarjeta muestre la mano */
-}
-
-/* Ajuste para los textos internos, para que no "empujen" el diseño */
-.cards .card h3 {
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.cards .card p {
-  padding: 0 10px;
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-
-/* MODAL */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 2000;
-}
-
-.modal-content {
-  background: var(--white);
-  margin: 8% auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
   padding: 20px;
-  width: 350px;
-  border-radius: 10px;
-  text-align: center;
-  animation: zoom 0.3s ease;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-/* Estilo para el botón de cerrar del modal */
-.span_modal {
+/* Estilo de cada botón individual */
+.filtros button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  background: white;
+  color: #555;
+  font-weight: 500;
+  font-size: 0.9rem;
   cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.modal img {
+/* Efecto visual cuando pasas el mouse sobre un botón de filtro */
+.filtros button:hover {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* 
+  =========================================
+  ESTRUCTURA DE LAS TARJETAS (DISEÑO Y GRID)
+  =========================================
+*/
+
+/* Organiza las tarjetas en filas y columnas automáticamente */
+.box_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Diseño base de cada tarjeta informativa */
+.box {
+  position: relative;
   width: 100%;
+  min-height: 450px;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen de fondo que llena toda la tarjeta */
+.box-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Capa que permite que el texto sea legible sobre la imagen */
+.box-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Caja con fondo semi-transparente y desenfoque (efecto cristal) */
+.box-content {
+  padding: 30px;
+  width: 85%;
+  max-height: 400px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* --- ESTILOS DE TEXTO Y ELEMENTOS VISUALES --- */
+
+/* Etiqueta pequeña que indica la categoría del curso */
+.category-badge {
+  background-color: #ffcc00;
+  color: #000;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Título principal del nombre del curso */
+.box-title {
+  color: #fff;
+  font-size: 2rem;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* Texto descriptivo corto debajo del título */
+.box-description {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+}
+
+/* Estilo visual para la tabla de detalles del curso */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.info-table td {
+  padding: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Resalta las etiquetas de la izquierda (Turno, Días, Horarios) */
+.info-table td:first-child {
+  color: #ffcc00;
+  font-weight: bold;
+  width: 35%;
+}
+
+/* --- INTERACCIÓN "VER MÁS" (EFECTO ACORDEÓN) --- */
+
+/* Oculta la información extra por defecto para no saturar el diseño */
+.extra-info {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+/* Muestra la información cuando se activa el botón */
+.extra-info.show {
+  max-height: 1000px;
+  opacity: 1;
+  margin-bottom: 15px;
+}
+
+/* Botón interactivo para expandir o contraer información */
+.btn-more {
+  background: none;
+  border: 1px solid #ffcc00;
+  color: #ffcc00;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Efecto visual al pasar el mouse sobre el botón "Ver más" */
+.btn-more:hover {
+  background: #ffcc00;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* --- ESTILOS ESPECÍFICOS PARA LA TABLA DE COMISIONES --- */
+
+/* Estilo para la fila de encabezado (Lugar / Opción) */
+.row-commission {
+  background: rgba(255, 196, 0, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 0, 0.3);
+}
+
+/* Estilo para el texto central en las filas de encabezado */
+.cell-info-header {
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 1.1rem;
+  color: #ffcc00;
+  font-weight: bold;
+  width: 100%;
+}
+
+/* Asegura que el texto de las celdas esté centrado */
+.info-table td {
+  text-align: center;
+  padding: 10px;
+}
+
+/* --- AJUSTES PARA MÓVILES Y TABLETS --- */
+@media (max-width: 768px) {
+  /* Ajusta el tamaño de las tarjetas en pantallas pequeñas */
+  .box {
+    min-height: auto;
+    height: auto;
+  }
+
+  /* Reduce el tamaño del texto para que se vea mejor en celulares */
+  .box-content {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .box-title {
+    font-size: 1.6rem;
+  }
+
+  .filtros button {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .info-table td {
+    font-size: 0.8rem;
+  }
 }

@@ -4,19 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Meta descripción para buscadores (SEO) y redes sociales. -->
     <meta
       name="description"
       content="Listado de cursos gratuitos del CFL N°403 Luz y Fuerza con salida laboral."
     />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/cursos.css" />
 
+    <!-- Favicons: Iconos que aparecen en la pestaña del navegador y en dispositivos móviles. -->
     <link
       rel="apple-touch-icon"
       sizes="57x57"
@@ -96,7 +93,6 @@
       content="../assets/favicons/ms-icon-144x144.png"
     />
     <meta name="theme-color" content="#ffffff" />
-
     <title>Cursos - CFL N°403</title>
   </head>
 
@@ -107,9 +103,8 @@
         src="../assets/images/logo_b.jpg"
         alt="Logo CFL 403 Luz y Fuerza"
       />
-
       <h2>CFL N°403 Luz y Fuerza</h2>
-
+      <!-- Navegación: Enlaces principales del sitio. -->
       <nav aria-label="Menú principal">
         <a href="index.html">Inicio</a>
         <a href="cursos.html">Cursos</a>
@@ -118,8 +113,6 @@
     </header>
 
     <main>
-      <!-- BUSCADOR -->
-
       <section class="buscador">
         <input
           type="text"
@@ -129,104 +122,67 @@
         />
       </section>
 
-      <!-- FILTROS -->
-
       <section class="filtros">
-        <button onclick="filtrar('todos')">Todos</button>
-        <button onclick="filtrar('informatica')">Informática</button>
-        <button onclick="filtrar('electricidad')">Energía Eléctrica</button>
-
-        <button onclick="filtrar('administracion')">
-          Administración y comercialización
+        <button data-categoria="todos">Todos</button>
+        <button data-categoria="Tecnologia y Programacion">
+          Tecnologia y Programacion
         </button>
-
-        <button onclick="filtrar('construccion')">Construcciones</button>
-
-        <button onclick="filtrar('comunicacion')">Comunicaciones</button>
-
-        <button onclick="filtrar('electronica')">Electrónica</button>
-
-        <button onclick="filtrar('grafico')">Industria Gráfica</button>
-
-        <button onclick="filtrar('metalmecanica')">Metalmecánica</button>
-
-        <button onclick="filtrar('estetica')">Estética Profesional</button>
+        <button data-categoria="Diseño, Marketing y Comunicación Digital">
+          Diseño, Marketing y Comunicación Digital
+        </button>
+        <button data-categoria="Administración, Contabilidad y RRHH">
+          Administración, Contabilidad y RRHH
+        </button>
+        <button data-categoria="Oficios Técnicos e Instalaciones">
+          Oficios Técnicos e Instalaciones
+        </button>
+        <button data-categoria="Manufactura, Robótica y Diseño Industrial">
+          Manufactura, Robótica y Diseño Industrial
+        </button>
+        <button data-categoria="Estética, Belleza y Moda">
+          Estética, Belleza y Moda
+        </button>
+        <button data-categoria="Idiomas y Otros">Idiomas y Otros</button>
       </section>
 
-      <!-- LISTADO -->
-
-      <section class="cards" id="lista"></section>
-
-      <!-- MODAL -->
-
-      <div class="modal" id="modal">
-        <div class="modal-content">
-          <span
-            class="span_modal"
-            onclick="cerrarModal()"
-            aria-label="Cerrar ventana"
-          >
-            ✖
-          </span>
-
-          <img id="imgModal" alt="Imagen del curso" />
-
-          <h2 id="titulo"></h2>
-
-          <p id="desc"></p>
-
-          <p id="duracion"></p>
-
-          <p id="req"></p>
-        </div>
-      </div>
+      <section class="box_container" id="lista"></section>
     </main>
 
+    <!-- Pie de página: Información institucional, contacto y redes sociales. -->
     <footer class="footer">
       <div class="footer-contenido">
         <div class="footer-col">
           <h3>CFP N°403 Luz y Fuerza</h3>
-
           <p>
             Centro de Formación Profesional orientado a la capacitación laboral
             gratuita con salida laboral.
           </p>
         </div>
-
         <div class="footer-col">
           <h4>Contacto</h4>
-
           <p>📍 Lomas de Zamora, Buenos Aires</p>
           <p>📧 contacto@cfp403.edu.ar</p>
           <p>📞 (011) 1234-5678</p>
         </div>
-
         <div class="footer-col">
           <h4>Enlaces</h4>
-
           <a href="index.html">Inicio</a>
           <a href="cursos.html">Cursos</a>
           <a href="contacto.html">Contacto</a>
         </div>
-
         <div class="footer-col">
           <h4>Seguinos</h4>
-
           <div class="redes">
             <a href="#" aria-label="Facebook CFP 403">Facebook</a>
-
-            <a href="#" aria-label="Instagram CFP 403"> Instagram </a>
+            <a href="#" aria-lang="Instagram CFP 403">Instagram</a>
           </div>
         </div>
       </div>
-
       <div class="footer-copy">
         <p>Diseño y Programación Web 2026</p>
-
         <p>CFL N°403 Luz y Fuerza - Todos los derechos reservados</p>
       </div>
     </footer>
-
     <script src="../js/cursos.js"></script>
   </body>
 </html>
