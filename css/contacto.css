@@ -1,10 +1,198 @@
 /* SECCIÓN CONTACTO */
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecerDeslizando 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.portada{
+  /* imagen de fondo (CAMBIAR) */
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(10,61,98,.65),rgba(10,61,98,.45)),
+  url(../assets/images/fondocontactos.jpg);
+  background-size: cover;
+  background-position: center;
+  /* contenido dentro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
 .titulo {
   text-align: center;
   padding: 40px;
-  margin-top: 80px;
+  margin-top: 0px;
+  color: #f5f7fa; 
 }
 
+.titulo h1{
+    font-size:4rem;
+    font-weight:700;
+    letter-spacing:2px;
+    text-shadow:
+        0 8px 20px rgba(0,0,0,.35);
+}
+
+.titulo p{
+    font-size:1.2rem;
+    margin-top:15px;
+    color:#e8eef5;
+}
+
+.titulo button{
+  background: #0A3D62;
+  background: linear-gradient(180deg,#C98B53 2%,
+  #C98B53 41%, #C98A4A  11%,
+  #D8A56A 100%);
+  color: #f5f7fa;
+  border: none;
+  border-radius: 50px;
+  padding: 16px 36px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.titulo button:hover {
+  background: rgb(243, 213, 156);
+  color: #0A3D62;
+  transform: translateY(-5px);
+  box-shadow: 0 25px 45px rgba(201,139,83,.45);
+}
+
+/*CSS del MAPA MAPA MAPA */
+#sedes {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px;
+}
+
+.contenedormapas{
+  width: 100%;
+  box-sizing: border-box;
+  color: #0A3D62;
+  background-color: #ffffff;
+  padding: 36px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+#mapa{
+  height: 400px;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 4px solid white;
+  box-shadow: 0 20px 45px rgba(0,0,0,.12);
+}
+
+.contenedor-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.slider-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Forzamos a que las tarjetas mantengan su tamaño en el slider */
+.card{
+    opacity:0;
+    transform:translateY(40px);
+    animation:cardFade .8s forwards;
+}
+
+.card:nth-child(2){
+    animation-delay:.15s;
+}
+
+.card:nth-child(3){
+    animation-delay:.3s;
+}
+
+.contenedor-slider .card {
+  flex: 0 0 350px; 
+  margin: 0;
+  background-color: #ebe9e9;
+  border-radius:20px;
+  overflow:hidden;
+  transition: 0.35s;
+  box-shadow: 0 15px 30px rgba(0,0,0,.08);
+}
+
+.contenedor-slider .card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,.15);
+}
+
+.contenedor-slider .card a{
+  text-decoration: none;
+}
+
+.contenedor-slider .card a:hover{
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Botones de navegación */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transition: background var(--transition), scale var(--transition);
+}
+
+.slider-btn:hover {
+  background-color: var(--secondary-color);
+  scale: 1.1;
+}
+
+.prev-btn { left: 5px; }
+.next-btn { right: 5px; }
+
+/* Adaptación responsive básica para móviles */
+@media (max-width: 768px) {
+  .contenedor-slider {
+    padding: 0 40px;
+  }
+  .contenedor-slider .card {
+    flex: 0 0 100%; /* Una tarjeta por pantalla en móviles */
+  }
+}
+
+/*CSS INFO SEDES*/
 .contenedor .card {
   width: 350px;
   padding: 20px;
@@ -15,17 +203,252 @@
   width: 100%;
   height: 180px;
   object-fit: cover;
-}
-
-iframe {
-  width: 100%;
-  height: 200px;
-  border: none;
-  border-radius: 10px;
-  margin-top: 10px;
+  transition: 0.5s;
+  border-radius: 12px;
 }
 
 .info {
   text-align: center;
   padding: 40px;
+}
+
+/*VERDADERA SECCIÓN DE CONTACTO*/
+.form{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 80px; 
+    background-color: #ffffff; 
+    padding: 60px 20px; 
+    box-sizing: border-box;
+}
+
+.form .contacto {
+    background-color: #ebe9e9; 
+    border: 1px solid #e2e8f0;  
+    border-radius: 20px;        
+    padding: 35px;              
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); 
+    max-width: 400px;
+    height: fit-content;
+}
+
+.form .contacto h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #0a3d62; 
+}
+
+.form .contacto p {
+    margin: 12px 0;
+    line-height: 1.5;
+    color: #334155;
+}
+
+.form .redes{
+    margin-left: 0;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px; 
+    width: 100%;
+}
+
+.redes a{
+    background-color: #0a3d62; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px; 
+    width: 45px;   
+    height: 45px;
+    transition: all 0.2s ease;
+}
+
+.redes a:hover{
+    background-color: #1e3a8a; 
+    transform: scale(1.1); 
+}
+
+.redes img{
+    width: 24px; 
+    height: 24px;
+    object-fit: contain;
+}
+
+.redes-footer {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.redes-footer a {
+    background-color: #0a3d62;
+    color: #ffffff; 
+    text-decoration: none;
+    padding: 8px 16px; 
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: sans-serif;
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out;
+}
+
+.redes-footer a:hover {
+    background-color: #1e3a8a;
+    transform: scale(0.94);
+}
+
+/* FORMULARIO FORMULARIO formulario  */
+.container_formulario{
+  display: flex;
+  justify-content: center;
+  padding: 36px;
+  background: #0A3D62;
+  background: linear-gradient(180deg,rgba(10, 61, 98, 1) 2%,
+  rgba(10, 61, 98, 0.99) 11%, rgba(20, 77, 131, 0.99) 41%,
+  rgba(54, 135, 249, 0.81) 100%);
+  color: aliceblue;
+  border-radius: 14% 0% 10% 0% / 14% 0% 10% 0%;
+  box-shadow:  0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.container_formulario input, textarea, .opciones{
+  transition: .3s;
+  background:#f7f9fc;
+  border:2px solid transparent;
+}
+
+.container_formulario input:hover, textarea:hover, .opciones:hover{
+  background:white;
+}
+
+.container_formulario input:focus, textarea:focus, .opciones:focus{
+  outline:none;
+  border-color:#0A3D62;
+  box-shadow: 0 0 0 4px rgba(201,139,83,.18);
+}
+
+.container_formulario input{
+  width: 100%;
+  height: 24px;
+  padding: 16px 16px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-radius: 10px;
+}
+
+.nombrecompleto{
+  display: flex;
+  gap: 16px;
+}
+
+.nombreapellido{
+  display: flex;
+  flex-direction: column;
+}
+
+.opciones{
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: #ffffff;
+  color: black;
+  font-size: 15px;
+  cursor: pointer;
+  color-scheme: light;
+
+}
+
+.opciones option{
+  color: gray; /*cambiar al de la info de contacto*/
+  background: #ffffff;
+
+}
+
+.asunto-otro{
+  display: none; 
+  width: 100%;
+  padding: 16px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+
+.asunto-otro.mostrar{
+  display: block;
+}
+
+textarea{
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* mensajes de error */
+.input-error{
+  border-color: #FF6B6B;
+}
+
+.error{
+  display: block;
+  color: #FF6B6B;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  min-height: 1em;
+}
+
+/*ESTILOS PARA EL BOTÓN ENVIAR */
+button[type="submit"] {
+  display: block;               
+  width: 100%;                  
+  min-height: 48px;             
+  padding: 12px 24px;          
+  margin-top: 20px;             
+  box-sizing: border-box;     
+  font-family: sans-serif;     
+  font-size: 16px;
+  font-weight: 560;              
+  color: #f1f5f9;               
+  text-align: center;
+  background-color: #0A3D62;    
+  border: none;                 
+  border-radius: 10px;          
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  /* Interactividad y Animación */
+  cursor: pointer;             
+  transition: all 0.2s ease-in-out; 
+}
+
+/* Efecto al pasar el cursor por encima */
+button[type="submit"]:hover {
+  background-color: #f1f5f9;   
+  color: #0A3D62;
+  font-weight: 600;
+  transform: scale(0.98);     
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+button[type="submit"]:active {
+  transform: scale(0.95);       
+}
+
+@keyframes aparecerDeslizando {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardFade{
+    to{
+        opacity:1;
+        transform:none;
+    }
 }

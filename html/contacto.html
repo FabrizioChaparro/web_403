@@ -15,7 +15,7 @@
     />
 
     <link rel="stylesheet" href="../css/global.css" />
-    <link rel="stylesheet" href="../css/contacto.css" />
+    <link rel="stylesheet" href="../css/contacto.css">
 
     <link
       rel="apple-touch-icon"
@@ -96,6 +96,11 @@
       content="../assets/favicons/ms-icon-144x144.png"
     />
     <meta name="theme-color" content="#ffffff" />
+    <!-- librería si dios quiere -->
+    <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin="" />
 
     <title>Contacto - CFP N°403 Luz y Fuerza</title>
   </head>
@@ -104,7 +109,7 @@
     <header>
       <img
         class="logo"
-        src="../assets/images/logo_b.jpg"
+        src="../assets/images/logo_icono.png"
         alt="Logo CFP 403 Luz y Fuerza"
       />
 
@@ -118,134 +123,174 @@
     </header>
 
     <main>
-      <section class="titulo">
-        <h1>Contacto y Sedes</h1>
-        <p>Acercate a la sede más cercana</p>
-      </section>
-
-      <section class="contenedor">
-        <article class="card">
-          <h3>Sede Principal</h3>
-          <p>CFP N°403 Luz y Fuerza</p>
-          <p>Suarez 451, Temperley, Buenos Aires</p>
-
-          <img
-            class="img_map"
-            src="../assets/images/frente.jpeg"
-            alt="Frente sede principal CFP 403"
-          />
-
-          <iframe
-            title="Mapa sede principal"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6554.4031044738995!2d-58.401981!3d-34.775701!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd2e448aee229%3A0x67e53348a4defa73!2sCnel.%20Su%C3%A1rez%20451%2C%20B1834%20Temperley%2C%20Provincia%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2sus!4v1778112232011!5m2!1ses-419!2sus"
-            width="400"
-            height="300"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </article>
-
-        <article class="card">
-          <h3>Subsede Morón</h3>
-          <p>Gral. Machado 749</p>
-
-          <img
-            class="img_map"
-            src="../assets/images/moron.png"
-            alt="Subsede Morón"
-          />
-
-          <iframe
-            title="Mapa sede Morón"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13129.3298245582!2d-58.619208!3d-34.64630600000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc761c4d7abdb%3A0x6125541b4cd2c7e2!2sGral.%20Machado%20749%2C%20B1708EOC%20Gran%20Buenos%20Aires%2C%20Provincia%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2sus!4v1778112373149!5m2!1ses-419!2sus"
-            width="400"
-            height="300"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
-        </article>
-
-        <article class="card">
-          <h3>Subsede La Plata</h3>
-          <p>La Plata</p>
-
-          <img
-            class="img_map"
-            src="../assets/images/laplata.png"
-            alt="Subsede La Plata"
-          />
-
-          <iframe
-            title="Mapa sede La Plata"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13090.247594298224!2d-57.96973599999999!3d-34.892346!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e70706998343%3A0x6018a1a35e8b2432!2sC.%203%20481%2C%20B1906%20Tolosa%2C%20Provincia%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2sus!4v1778112501866!5m2!1ses-419!2sus"
-            width="400"
-            height="300"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
-        </article>
-
-        <article class="card">
-          <h3>Subsede San Justo</h3>
-          <p>Av. Monseñor Bufano 2560</p>
-
-          <img
-            class="img_map"
-            src="../assets/images/sanjusto.png"
-            alt="Subsede San Justo"
-          />
-
-          <iframe
-            title="Mapa sede San Justo"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13123.745696091493!2d-58.575414!3d-34.681554!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc637be7e04ed%3A0xf8cbbbaec790acbd!2sAv.%20Monse%C3%B1or%20Bufano%202560%2C%20B1754%20San%20Justo%2C%20Provincia%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2sus!4v1778112612649!5m2!1ses-419!2sus"
-            width="400"
-            height="300"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
-        </article>
-
-        <article class="card">
-          <h3>Subsede San Martín</h3>
-          <p>Ayacucho 2390</p>
-
-          <img
-            class="img_map"
-            src="../assets/images/sanmartin.png"
-            alt="Subsede San Martín"
-          />
-
-          <iframe
-            title="Mapa sede San Martín"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13141.180228608077!2d-58.538017!3d-34.5714!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb76e12651b6d%3A0x25c8efeea9d1561e!2sAyacucho%202390%2C%20B1650%20San%20Mart%C3%ADn%2C%20Provincia%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2sus!4v1778112711539!5m2!1ses-419!2sus"
-            width="400"
-            height="300"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
-        </article>
-      </section>
-
-      <section class="info">
-        <h2>Información de contacto</h2>
-        <p><strong>Dirección:</strong> Suarez 451, Temperley, Buenos Aires</p>
-        <p><strong>Email:</strong> contacto@cfp403.edu.ar</p>
-        <p><strong>Teléfono:</strong> (011) 1234-5678</p>
-
-        <div class="redes">
-          <a href="#" aria-label="Facebook CFP 403">Facebook</a>
-          <a href="#" aria-label="Instagram CFP 403">Instagram</a>
-          <a href="#" aria-label="WhatsApp CFP 403">WhatsApp</a>
+      <section class="portada">
+        <div class="titulo">
+          <h1>Contacto y Sedes</h1>
+          <p>Acercate a la sede más cercana</p>
+          <br>
+          
+          <a href="#sedes"><button>Conocé nuestras sedes</button></a>
         </div>
+        
       </section>
-    </main>
+      <section class="sedes" id="sedes">
+        <div class="contenedormapas">
+          <h1>Acercate a la sede de Luz y Fuerza más cercana</h1>
+          <!-- Acá está nuestro mapa -->
+          <div classs="mapa" id="mapa">
+          </div>
+          <!-- Acá arranca la info de las sedes -->
+          <div class="contenedor-slider" id="contenedor">
+        <button class="slider-btn prev-btn" aria-label="Anterior"><</button>
+        
+        <div class="slider-wrapper">
+          <div class="slider-track">
+            
+            <article class="card-sede card" data-sede="CFP Temperley">
+              <h3>Sede Principal</h3>
+              <p>CFP N°403 Luz y Fuerza</p>
+              <p>Suarez 451, Temperley, Buenos Aires</p>
+              <img class="img_map" src="../assets/images/frente.jpeg" alt="Frente sede principal CFP 403" />
+              <p> <a href="https://maps.app.goo.gl/Z3mJpWTzsW1dqS7s9">➥ Abrir en google maps</a> </p>
+            </article>
 
+            <article class="card-sede  card" data-sede="CFP Morón">
+              <h3>Subsede Morón</h3>
+              <p>Gral. Machado 749</p>
+              <img class="img_map" src="../assets/images/moron.png" alt="Subsede Morón" />
+              <p> <a href="https://maps.app.goo.gl/hkFVZU1unsSw4WHL6">➥ Abrir en google maps</a> </p>
+            </article>
+
+            <article class="card-sede  card" data-sede="CFP La Plata">
+              <h3>Subsede La Plata</h3>
+              <p>La Plata</p>
+              <img class="img_map" src="../assets/images/laplata.png" alt="Subsede La Plata" />
+              <p> <a href="https://maps.app.goo.gl/nRp7xRbv8bEm1Cuu5">➥ Abrir en google maps</a> </p>
+            </article>
+
+            <article class="card-sede  card" data-sede="CFP San Justo">
+              <h3>Subsede San Justo</h3>
+              <p>Av. Monseñor Bufano 2560</p>
+              <img class="img_map" src="../assets/images/sanjusto.png" alt="Subsede San Justo" />
+              <p> <a href="https://maps.app.goo.gl/9kUQHRpynfmRbHhv6">➥ Abrir en google maps</a> </p>
+            </article>
+
+            <article class="card-sede card" data-sede="CFP San Martin">
+              <h3>Subsede San Martín</h3>
+              <p>Ayacucho 2390</p>
+              <img class="img_map" src="../assets/images/sanmartin.png" alt="Subsede San Martín" />
+              <p> <a href="https://maps.app.goo.gl/5fFE9gj7qvXLbuRm6">➥ Abrir en google maps</a> </p>
+            </article>
+
+          </div>
+        </div>
+
+        <button class="slider-btn next-btn" aria-label="Siguiente">></button>
+      </div>
+
+      <!-- Acá termina el slider -->
+           
+          
+        </div>
+        
+      </section>
+
+    <!--ARRANCA LA SECCIÓN DEL FORMULARIO-->
+    <section class="form">
+       <div class="contacto">
+          <h2>Información de contacto</h2>
+          <br>
+          <p><strong>𖡡 Dirección:</strong> Suarez 451, Temperley, Buenos Aires</p>
+          <p><strong>✉ Email:</strong> contacto@cfp403.edu.ar</p>
+          <p><strong>☎︎ Teléfono:</strong> (011) 1234-5678</p>
+          <br> 
+          <div class="redes">
+            <a href="https://www.instagram.com/cfl403luzyfuerza?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram CFP 403"><img src="../assets/images/ig.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com/people/Cfl403temperley/61575275501333/?ref=NONE_xav_ig_profile_page_web#" aria-label="Facebook CFP 403"><img src="../assets/images/facebook.png" alt="Facebook"></a>
+            <a href="#" aria-label="WhatsApp CFP 403"><img src="../assets/images/whatsapp.png" alt="WhatsApp"></a>
+            <a href="https://www.tiktok.com/@cfl403.luzyfuerza?_t=8qCF3SEZGsf&_r=1" aria-label="TikTok CFP 403"><img src="../assets/images/tiktok.png" alt="TikTok"></a>
+          </div>
+        </div>
+
+        <!-- FORMULARIO FORMULARIO FORMULARIO -->
+        <div class="container_formulario">
+         <form id="formulario">
+          <!-- Apellido y nombre -->
+           <div class="nombrecompleto">
+              <div class="nombreapellido">
+                <label for="nombre">Nombre * </label>
+                <input type="text" id="nombre" placeholder="Nombre/s" required>
+                <span class="error" id="nombre-error"></span>
+              </div>
+              <br> <br>
+              <div class="nombreapellido">
+                <label for="apellido">Apellido *</label>
+                <input type="text" id="apellido" placeholder="Apellido/s" required>
+                <span class="error" id="apellido-error"></span>
+              </div>
+           </div>
+           <br>
+            <!-- Teléfono -->
+           <label for="telefono">Teléfono</label>
+           <br> 
+           <!--Telefono y usando tel para el mismo-->
+           <input type="tel" id="telefono" name="telefono" placeholder="11 1234-5678">
+            <span class="error" id="telefono-error"></span>
+          
+            <br>
+            <!-- E mail -->
+            <label for="email">E-mail *</label>
+            <br> 
+            <input type="email" id="email" placeholder="Ingrese su correo electrónico" required>
+            <span class="error" id="email-error"></span>
+            <br> <br>
+
+            <!--ASUNTO MENSAJE-->
+            <label for="asunto">Asunto *</label>
+            <br> 
+            <select name="asunto" id="asunto" class="opciones">
+              <option value="" disabled selected hidden>Selecciona un motivo de consulta</option>
+              <option value="opcion1">Cursos</option>
+              <option value="opcion2">Inscripciones</option>
+              <option value="opcion3">Inicio de clases</option>
+              <option value="opcion4">Administración</option>
+              <option value="otro">Otro</option>
+            </select>
+           <span class="error" id="asunto-error"></span> <!--si no elige asunto-->
+           <input type="text" id="otro-asunto" class="asunto-otro" placeholder="Escriba el motivo de su consulta"> <!--elige escribir la consula-->
+           <span class="error" id="otro-asunto-error"></span>
+
+            <!-- MENMSAJE MENSAJE MENSAJE-->
+            <br><br>
+            <label for="mensaje">Mensaje *</label>
+            <br>
+            <textarea id="mensaje" name="mensaje" rows="6" cols="40" placeholder="Escriba acá su consulta..." required></textarea>
+            <br>
+            <span class="error" id="mensaje-error"></span>
+            
+            
+            <!-- Mensaje del formulario -->
+            <div id="form-message" class="form_message"></div> 
+            <br>
+            <button type="submit">Enviar ᯓ➤</button>
+
+
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+    <!--SRCIPT ACÁ ACÁ ACÁ-->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    </main>
+    <script src="../js/contactos.js"></script>
+
+
+    <!--FOOTER FOOTER FOOTER -->
+
+      <!--FOOTER FOOTER FOOTER -->
     <footer class="footer">
       <div class="footer-contenido">
         <div class="footer-col">
@@ -272,7 +317,8 @@
 
         <div class="footer-col">
           <h4>Seguinos</h4>
-          <div class="redes">
+          <!-- Corrección: Se cambió la clase a "redes-footer" para independizarla -->
+          <div class="redes-footer">
             <a href="#" aria-label="Facebook CFP 403">Facebook</a>
             <a href="#" aria-label="Instagram CFP 403">Instagram</a>
           </div>
@@ -284,5 +330,4 @@
         <p>CFL N°403 Luz y Fuerza - Todos los derechos reservados</p>
       </div>
     </footer>
-  </body>
 </html>
